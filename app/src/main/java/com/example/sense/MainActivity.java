@@ -93,7 +93,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
             updateUI();
         });
 
-        // Request notification permission for Android 13+ (API 33)
+        // Request notification permission
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
             if (ActivityCompat.checkSelfPermission(this, Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED) {
                 ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.POST_NOTIFICATIONS}, 101);
@@ -171,7 +171,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     }
 
     /**
-     * Creates the notification channel. API level is checked to be >= 30 in this project.
+     * Creates the notification channel.
      */
     private void createNotificationChannel() {
         CharSequence name = "Highscore Channel";
