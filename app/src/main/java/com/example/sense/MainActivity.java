@@ -128,10 +128,13 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         pbHighscore.setProgress(highscore);
     }
 
+    /**
+     * Processes linear acceleration updates to calculate shake speed and update the highscore if a new record is reached.
+     */
     @Override
     public void onSensorChanged(SensorEvent event) {
         if (event.sensor.getType() == Sensor.TYPE_LINEAR_ACCELERATION) {
-            // Focus on horizontal (X-axis) movement as per exercise description
+            // Focus on horizontal (X-axis) movement
             float xAccel = Math.abs(event.values[0]);
             
             // Scaling factor to map acceleration to the 0-5000 range
@@ -185,6 +188,9 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         }
     }
 
+    /**
+     * Registers the sensor listener when the activity becomes visible to the user.
+     */
     @Override
     protected void onResume() {
         super.onResume();
@@ -193,12 +199,18 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         }
     }
 
+    /**
+     * Unregisters the sensor listener to save power and prevent memory leaks when the activity is not in the foreground.
+     */
     @Override
     protected void onPause() {
         super.onPause();
         sensorManager.unregisterListener(this);
     }
 
+    /**
+     * Stops the gravity task by removing any pending callbacks when the activity is destroyed.
+     */
     @Override
     protected void onDestroy() {
         super.onDestroy();

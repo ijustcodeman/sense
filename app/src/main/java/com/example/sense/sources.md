@@ -22,4 +22,4 @@ Folgende Quellen und Dokumentationen wurden für die Bearbeitung der Aufgabe ver
     *   Thema: Nutzung und Konfiguration des horizontalen Fortschrittsbalkens.
     *   URL: [https://developer.android.com/reference/android/widget/ProgressBar](https://developer.android.com/reference/android/widget/ProgressBar)
 
-Für die erstellung von Kommentaren sowie der Verschönerung vom Quellverzeichnis und Wissenslücken wurde KI genutzt.
+Für die erstellung von Kommentaren sowie der Verschönerung vom Quellverzeichnis, Wissenslücken und Code Optimierung wurde KI genutzt.
